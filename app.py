@@ -49,8 +49,7 @@ def FindVideosChannelGet():
             
             videos.append({'id':number,'title':playlist_item['snippet']['title'],'description':playlist_item['snippet']['description']})
             number+=1;
-        next_page_token = playlistitems_response.get('tokenPagination', {}).get(
-        'nextPageToken')
+        next_page_token = playlistitems_response.get('nextPageToken')
         
         
     return json.dumps(videos);
@@ -95,9 +94,9 @@ def FindVideosChannel():
             if ''==user:
                 videos.append({'id':number,'title':playlist_item['snippet']['title'],'description':playlist_item['snippet']['description']})
             number+=1;
-        next_page_token = playlistitems_response.get('tokenPagination', {}).get(
-        'nextPageToken')
         
+        next_page_token = playlistitems_response.get('nextPageToken')
+        print(next_page_token)
         
     return json.dumps(videos);
 if __name__=="__main__":
