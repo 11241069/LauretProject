@@ -4,7 +4,7 @@ angular.module('myApp').controller('buscar', ['$scope','$http','$location',funct
     var videos = [];
 
     ctrl.init = function(){
-        alert("Please Wait a Second");
+        toastr.info("Please Wait a Second");
         $.ajax({
             
 		
@@ -37,7 +37,7 @@ angular.module('myApp').controller('buscar', ['$scope','$http','$location',funct
     }
     ctrl.init();
     $scope.buscar= function(){
-        alert("It can take a while");
+        toastr.info("It can take a while");
         var videoname = $('#txtname').val();
          $.ajax({
 			url: '/FindVideosChannel',
